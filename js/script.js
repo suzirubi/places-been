@@ -43,7 +43,8 @@ $(document).ready(function() {
 
 		$("div#placeDisplay").append(inputPlaceFull.fullPlace());
 
-		$("div#placeDisplay").last().click(function() {
+		$("div#placeDisplay h3").last().click(function() {
+			alert("clicked on " + inputPlaceFull.place + ": " + inputSet.season + "; " + inputSet.lodging);
 			$("ul#locationInfo").text("")
 			$(".locationCat").show();
 			$("ul#locationInfo").append(inputSet.fullLocation());
