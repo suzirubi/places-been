@@ -1,5 +1,6 @@
 function Place(place) {
 	this.place = place;
+	// this.locationArray = [];
 }
 
 function LocationSet(season, lodging) {
@@ -20,13 +21,15 @@ function resetFields() {
 	$("input#newSeason").val("");
 	$("input#newLodging").val("");
 }
+// function resetList() {
+// 	$("ul#locationInfo").text("");
+// }
 
 $(document).ready(function() {
 
 	$("form#userInfo").submit(function(event) {
 		event.preventDefault();
 
-		$("ul#locationInfo").text("");
 
 		var inputPlace = $("input#newPlace").val();
 		var inputPlaceFull = new Place(inputPlace);
@@ -35,11 +38,17 @@ $(document).ready(function() {
 		var inputLodging = $("input#newLodging").val();
 		var inputSet = new LocationSet(inputSeason, inputLodging);
 
+		// var newLocation = new Location1 (inputSeason, inputLodging);
+		// newLocation.locationArray.push(inputSet)
+
 		$("div#placeDisplay").append(inputPlaceFull.fullPlace());
 
+		$("div#placeDisplay").last().click(function() {
+			$("ul#locationInfo").text("")
+			$(".locationCat").show();
+			$("ul#locationInfo").append(inputSet.fullLocation());
 
-		$("ul#locationInfo").append(inputSet.fullLocation());
-
+		});
 		resetFields();
 	});
 

@@ -4,10 +4,16 @@
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }*/
 
+
+
 #placeDisplay {
   margin-top: 50px;
+  cursor: pointer;
+    text-decoration: underline;
 }
 #locationInfo {
   margin-top: 50px;
-  /*display: none;*/
+}
+.locationCat {
+  display: none;
 }
